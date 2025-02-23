@@ -105,5 +105,28 @@ while True:
 			# Put a text outside the rectangular detection
 			# Choose the font of your choice: FONT_HERSHEY_SIMPLEX, FONT_HERSHEY_PLAIN, FONT_HERSHEY_DUPLEX, FONT_HERSHEY_COMPLEX, FONT_HERSHEY_SCRIPT_COMPLEX, FONT_ITALIC, etc.
 			cv2.putText(frame, label, (startX, y), cv2.FONT_HERSHEY_SIMPLEX, 0.5, COLORS[idx], 2)
+        # show the output frame
+	cv2.imshow("Frame", frame)
+	
+    # Now, let's code this logic (just 3 lines, lol)
+	key = cv2.waitKey(1) & 0xFF
 
+	# Press 'q' key to break the loop
+	if key == ord("q"):
+		break
+
+	# update the FPS counter
+	fps.update()
+
+# stop the timer
+fps.stop()
+
+# Display FPS Information: Total Elapsed time and an approximate FPS over the entire video stream
+print("[INFO] Elapsed Time: {:.2f}".format(fps.elapsed()))
+print("[INFO] Approximate FPS: {:.2f}".format(fps.fps()))
+
+# Destroy windows and cleanup
+cv2.destroyAllWindows()
+# Stop the video stream
+vs.stop()
 
