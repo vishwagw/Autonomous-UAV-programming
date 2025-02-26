@@ -90,3 +90,8 @@ def simulate(drone, duration=10, dt=0.1):
               f"Velocity: ({state['vx']:.2f}, {state['vy']:.2f}, {state['vz']:.2f}) | "
               f"Yaw: {state['yaw']:.1f}° | Battery: {state['battery']:.1f}%")
         time.sleep(dt)  # Simulate real-time step
+
+if __name__ == "__main__":
+    drone = Drone()
+    autonomous_control(drone)  # Run autonomous mission
+    simulate(drone, duration=10, dt=0.1)  # Simulate for 10 seconds
