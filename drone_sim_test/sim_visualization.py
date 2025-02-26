@@ -127,4 +127,8 @@ def simulate(drone, duration=10, dt=0.1):
     
     plt.show()  # Keep the final plot open
 
-
+if  __name__ == "__main__":
+    drone = Drone()
+     # Run autonomous mission
+    autonomous_control(drone)
+    simulate(drone, duration=10, dt=4)  # Simulate for 10 seconds
