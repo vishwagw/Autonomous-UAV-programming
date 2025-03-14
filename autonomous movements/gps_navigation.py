@@ -37,3 +37,17 @@ def land():
     print("vehicle is landing..")
     autumn1.mode = VehicleMode("LAND")
 
+# initialize the program:
+if __name__ == "__main__":
+    arm_and_takeoff(4) # meter high
+    goto_loc() # include coordinates for lat, lon, alt
+    time.sleep(5) # hoover on waypoint
+    land() 
+
+    # terminate the function:
+    autumn1.close()
+
+# multiple waypoints:
+#waypoints = [(), (), ()] # include coordinates here
+#for lat, lon, alt in waypoints:
+#    goto_loc(lat, lon, alt)
